@@ -1,1 +1,2 @@
 import test from 'node:test'; import assert from 'node:assert/strict'; import {scoreAsset} from '../src/lib/score.js'; test('score capped',()=>assert.ok(scoreAsset({width:4000,height:5000,orientation:'portrait',creator_name:'A',source_page:'x',license_name:'L',description:'business event'},{query:'business',orientation:'portrait'})<=100));
+test('provider modules import',async()=>{ await import('../src/providers/pexels.js'); await import('../src/providers/pixabay.js'); await import('../src/providers/unsplash.js'); });
