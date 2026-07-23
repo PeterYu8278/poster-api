@@ -1,0 +1,1 @@
+export function scoreAsset(a, q={}) { let s=55; if(q.orientation&&a.orientation===q.orientation)s+=10; if(a.width>=2000&&a.height>=2000)s+=10; if(a.creator_name)s+=5; if(a.source_page)s+=5; if(a.license_name)s+=10; if(a.description&&q.query&&a.description.toLowerCase().includes(q.query.toLowerCase().split(" ")[0]))s+=5; return Math.min(100,s); }
